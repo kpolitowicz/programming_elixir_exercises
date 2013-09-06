@@ -32,15 +32,19 @@ defmodule MyStrings do
 
   def center(list) do
     max_length = Enum.max(Enum.map(list, &(String.length(&1))))
-    Enum.each(list, &(IO.puts _center(&1, max_length)))
+    Enum.each(list, &(IO.puts center(&1, max_length)))
   end
 
-  defp _center(str, max_length) do
+  def center(str, max_length) do
     diff  = max_length - String.length(str)
     left  = div(diff, 2)
     right = diff - left
 
     "#{String.duplicate(" ", left)}#{str}#{String.duplicate(" ", right)}"
+  end
+  def right(str, max_length) do
+    diff  = max_length - String.length(str)
+    "#{String.duplicate(" ", diff)}#{str}"
   end
 
   def capitalize_sentences(str), do: _capitalize_sentences(str, true)
