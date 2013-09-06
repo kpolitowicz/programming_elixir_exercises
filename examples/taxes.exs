@@ -49,6 +49,6 @@ defmodule Taxes do
 
   defp convert(:id, str),         do: binary_to_integer(str)
   defp convert(:net_amount, str), do: binary_to_float(str)
-  defp convert(:ship_to, str),    do: binary_to_atom(String.lstrip(str, ?:))
+  defp convert(:ship_to, str),    do: String.lstrip(str, ?:) |> binary_to_atom
   defp convert(_, str),           do: str
 end
