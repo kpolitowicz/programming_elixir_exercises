@@ -1,6 +1,6 @@
 defmodule Issues.CLI do 
   import Issues.TableFormatter, only: [ print_table_for_columns: 2 ]
-  
+
   @default_count 4
 
   @moduledoc """
@@ -52,9 +52,9 @@ defmodule Issues.CLI do
     |> print_table_for_columns(["number", "created_at", "title"])
   end
 
-  def decode_response({:ok, body}), do: Jsonex.decode(body) 
+  def decode_response({:ok, body}), do: :jsx.decode(body) 
   def decode_response({:error, msg}) do
-    error = Jsonex.decode(msg)["message"]
+    error = :jsx.decode(msg)["message"]
     IO.puts "Error fetching from Github: #{error}" 
     System.halt(2)
   end

@@ -20,7 +20,9 @@ defmodule Issues.Mixfile do
   defp deps do
     [
       { :httpotion, "~> 0.2.0", github: "myfreeweb/httpotion" },
-      {:jsonex,     "2.0",      github: "marcelog/jsonex", tag: "2.0" },
+      # {:jsonex,     "2.0",      github: "marcelog/jsonex", tag: "2.0" },
+      # {:jsonex,                 github: "devinus/jsonex" },
+      { :jsx,       "~> 1.3.3", github: "talentdeficit/jsx", tag: "v1.3.3" },
       {:ex_doc,                 github: "elixir-lang/ex_doc" }
     ]
   end
